@@ -45,10 +45,6 @@ export function ProjectCard({
             src={getLogoPath(title) || '/placeholder.svg'}
             alt={`${title} logo`}
             className="max-w-full max-h-full object-contain"
-            onError={(e) => {
-              // Fallback to placeholder if image fails to load
-              (e.target as HTMLImageElement).src = imageUrl;
-            }}
           />
         </div>
       </div>

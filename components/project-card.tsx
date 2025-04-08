@@ -1,31 +1,67 @@
-import { Github, ExternalLink } from "lucide-react"
-import Link from "next/link"
+import { Github, ExternalLink, Calendar } from 'lucide-react';
+import Link from 'next/link';
 
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
+import { Button } from '@/components/ui/button';
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from '@/components/ui/card';
+import { Badge } from '@/components/ui/badge';
 
 interface ProjectCardProps {
-  title: string
-  description: string
-  tags: string[]
-  imageUrl: string
-  demoUrl: string
-  repoUrl: string
+  title: string;
+  description: string;
+  tags: string[];
+  imageUrl: string;
+  demoUrl: string;
+  repoUrl: string;
+  period?: string;
 }
 
-export function ProjectCard({ title, description, tags, imageUrl, demoUrl, repoUrl }: ProjectCardProps) {
+export function ProjectCard({
+  title,
+  description,
+  tags,
+  imageUrl,
+  demoUrl,
+  repoUrl,
+  period,
+}: ProjectCardProps) {
+  // Function to generate logo path based on title
+  const getLogoPath = (title: string) => {
+    const slug = title.toLowerCase().replace(/\s+/g, '-');
+    return `/images/${slug}-logo.png`;
+  };
+
   return (
     <Card className="overflow-hidden flex flex-col h-full transition-all duration-300 hover:shadow-lg">
-      <div className="overflow-hidden h-48">
-        <img
-          src={imageUrl || "/placeholder.svg"}
-          alt={title}
-          className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
-        />
+      <div className="overflow-hidden h-48 bg-muted/30 flex items-center justify-center p-4">
+        <div className="relative w-full h-full flex items-center justify-center">
+          <img
+            src={getLogoPath(title) || '/placeholder.svg'}
+            alt={`${title} logo`}
+            className="max-w-full max-h-full object-contain"
+            onError={(e) => {
+              // Fallback to placeholder if image fails to load
+              (e.target as HTMLImageElement).src = imageUrl;
+            }}
+          />
+        </div>
       </div>
       <CardHeader>
-        <CardTitle>{title}</CardTitle>
+        <div className="flex justify-between items-start">
+          <CardTitle>{title}</CardTitle>
+          {period && (
+            <Badge variant="outline" className="flex items-center gap-1">
+              <Calendar className="h-3 w-3" />
+              <span className="text-xs">{period}</span>
+            </Badge>
+          )}
+        </div>
         <CardDescription>{description}</CardDescription>
       </CardHeader>
       <CardContent className="flex-grow">
@@ -52,6 +88,5 @@ export function ProjectCard({ title, description, tags, imageUrl, demoUrl, repoU
         </Button>
       </CardFooter>
     </Card>
-  )
+  );
 }
-

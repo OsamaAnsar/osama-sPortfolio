@@ -9,7 +9,6 @@ export const metadata = {
   title: "Osama Ansar | JavaScript Developer Portfolio",
   description:
     "Portfolio website showcasing Osama Ansar's projects and skills as a JavaScript developer specializing in React, Angular, Vue, and Node.js",
-    generator: 'v0.dev'
 }
 
 export default function RootLayout({
@@ -19,6 +18,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <head />
       <body className={inter.className}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
           {children}
@@ -27,7 +27,3 @@ export default function RootLayout({
     </html>
   )
 }
-
-
-
-import './globals.css'

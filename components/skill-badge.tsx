@@ -67,7 +67,7 @@ export function SkillBadge({ name, icon }: SkillBadgeProps) {
   }
 
   return (
-    <Card className="flex flex-col items-center justify-center p-4 hover:border-primary transition-colors">
+    <Card className="flex flex-col items-center justify-center p-4 hover:border-primary transition-colors dark:bg-gray-800/50">
       <CardContent className="p-4 flex flex-col items-center gap-2">
         {getIcon()}
         <span className="text-sm font-medium mt-2">{name}</span>
@@ -75,4 +75,3 @@ export function SkillBadge({ name, icon }: SkillBadgeProps) {
     </Card>
   )
 }
-

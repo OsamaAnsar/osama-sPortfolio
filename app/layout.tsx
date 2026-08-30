@@ -6,9 +6,9 @@ import { ThemeProvider } from "@/components/theme-provider"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata = {
-  title: "Osama Ansar | JavaScript Developer Portfolio",
+  title: "Osama Ansar | Senior Software Engineer, TypeScript RAG & AI Systems",
   description:
-    "Portfolio website showcasing Osama Ansar's projects and skills as a JavaScript developer specializing in React, Angular, Vue, and Node.js",
+    "Portfolio of Osama Ansar, a Senior Software Engineer with 5+ years across React, Angular, Vue, and Node.js, now building TypeScript RAG systems, agentic pipelines, and LLM evaluation infrastructure.",
 }
 
 export default function RootLayout({

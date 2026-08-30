@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
+  <rect width="400" height="400" fill="#0b0f14"/>
+  <circle cx="200" cy="150" r="70" fill="none" stroke="#3fb950" stroke-width="6"/>
+  <path d="M170 150 L192 172 L232 128" fill="none" stroke="#3fb950" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="200" y="270" font-family="-apple-system,Segoe UI,Roboto,sans-serif" font-size="28" font-weight="700" fill="#e6edf3" text-anchor="middle">rag-eval-harness</text>
+  <text x="200" y="300" font-family="-apple-system,Segoe UI,Roboto,sans-serif" font-size="15" fill="#8b98a5" text-anchor="middle">LLM-judge evaluation for RAG</text>
+</svg>

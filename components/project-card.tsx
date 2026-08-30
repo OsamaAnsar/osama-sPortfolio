@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { ExternalLink, Calendar, ImageIcon, Building } from "lucide-react"
+import { ExternalLink, Calendar, ImageIcon, Building, Github } from "lucide-react"
 import Link from "next/link"
 
 import { Button } from "@/components/ui/button"
@@ -15,7 +15,7 @@ interface ProjectCardProps {
   tags: string[]
   imageUrl: string
   demoUrl: string
-  repoUrl: string
+  repoUrl?: string
   period?: string
   images?: string[]
   company?: string
@@ -116,7 +116,20 @@ export function ProjectCard({
             ))}
           </div>
         </CardContent>
-        <CardFooter className="flex justify-end">
+        <CardFooter className="flex justify-end gap-2">
+          {repoUrl && (
+            <Button
+              size="sm"
+              variant="outline"
+              asChild
+              onClick={(e) => e.stopPropagation()} // Prevent card click
+            >
+              <Link href={repoUrl} target="_blank" rel="noopener noreferrer">
+                <Github className="mr-2 h-4 w-4" />
+                View Code
+              </Link>
+            </Button>
+          )}
           <Button
             size="sm"
             asChild

@@ -29,7 +29,6 @@ export default function Home() {
       tags: ["Angular", "React", "Vue", "Real-time"],
       imageUrl: "/truckpedia-logo.png",
       demoUrl: "https://truckpedia.com",
-      repoUrl: socialLinks.github,
       period: "Feb 2024 - Present",
       company: "Truckpedia",
       companyUrl: "https://truckpedia.com",
@@ -54,7 +53,6 @@ export default function Home() {
       tags: ["Angular", "React", "Vue", "SignalR"],
       imageUrl: "/omnivex-logo.png",
       demoUrl: "https://www.omnivex.com/platform/omnivex-ink",
-      repoUrl: socialLinks.github,
       period: "May 2022 - Dec 2023",
       company: "Omnivex Corporation",
       companyUrl: "https://omnivex.com",
@@ -92,7 +90,6 @@ export default function Home() {
       tags: ["Vue.js", "Vuex", "Food Delivery"],
       imageUrl: "/goorder-logo.png",
       demoUrl: "https://contrivesol.com",
-      repoUrl: socialLinks.github,
       period: "Jan 2020 - Jun 2022",
       company: "Contrive Solutions",
       companyUrl: "https://contrivesol.com",
@@ -112,7 +109,6 @@ export default function Home() {
       tags: ["UI Components", "Reusability", "Cross-product"],
       imageUrl: "/soundblock-logo.png",
       demoUrl: "https://contrivesol.com",
-      repoUrl: socialLinks.github,
       period: "Jan 2020 - Jun 2022",
       company: "Contrive Solutions",
       companyUrl: "https://contrivesol.com",
@@ -132,7 +128,6 @@ export default function Home() {
       tags: ["Angular", "Microfrontends", "Component Libraries"],
       imageUrl: "/finlex-logo.png",
       demoUrl: "https://contrivesol.com",
-      repoUrl: socialLinks.github,
       period: "Jan 2020 - Jun 2022",
       company: "Contrive Solutions",
       companyUrl: "https://contrivesol.com",
@@ -156,7 +151,6 @@ export default function Home() {
       tags: ["React", "Redux", "Node.js", "MongoDB"],
       imageUrl: "/blunk-logo.png",
       demoUrl: "https://webicosoft.com",
-      repoUrl: socialLinks.github,
       period: "May 2019 - Nov 2019",
       company: "Webicosoft",
       companyUrl: "https://webicosoft.com",
@@ -166,6 +160,46 @@ export default function Home() {
       images: [
         "/blunk-logo.png",
       ],
+    },
+  ]
+
+  // AI / RAG engineering projects
+  const aiProjects = [
+    {
+      title: "rag-eval-harness",
+      description:
+        "An LLM-judge evaluation harness for RAG pipelines: faithfulness, answer relevance, context precision, and context recall, with a CI regression gate. Correctly catches planted hallucinations in the sample dataset. Pluggable Judge interface (real OpenAI judge + a dependency-free FakeJudge for tests/CI), 9 unit tests with no API key required, auto-deployed live report on every push.",
+      tags: ["TypeScript", "RAG", "LLM Evaluation", "Vitest", "GitHub Actions"],
+      imageUrl: "/images/rag-eval-harness/logo.svg",
+      demoUrl: "https://osamaansar.github.io/rag-eval-harness/",
+      repoUrl: "https://github.com/OsamaAnsar/rag-eval-harness",
+      period: "Aug 2026",
+      role: "Independent Project",
+      images: ["/images/rag-eval-harness/logo.svg"],
+    },
+    {
+      title: "agentic-rag",
+      description:
+        "A multi-hop agentic RAG pipeline: decomposes complex questions into sub-questions, retrieves evidence per sub-question with a from-scratch BM25 implementation, checks answer sufficiency, and synthesizes a cited final answer. Zero framework dependency for the core BM25 ranking math. 7 unit tests, including hand-written mock LLMs exercising the sufficiency-loop and max-hop cutoff logic.",
+      tags: ["TypeScript", "Agents", "BM25", "Multi-hop Retrieval", "Vitest"],
+      imageUrl: "/images/agentic-rag/logo.svg",
+      demoUrl: "https://osamaansar.github.io/agentic-rag/",
+      repoUrl: "https://github.com/OsamaAnsar/agentic-rag",
+      period: "Aug 2026",
+      role: "Independent Project",
+      images: ["/images/agentic-rag/logo.svg"],
+    },
+    {
+      title: "Open Source: weaviate-client",
+      description:
+        "Diagnosed and fixed a silent data-loss bug in Weaviate's official TypeScript client: data.ingest() accepted the documented unwrapped input shape but stored it empty. Fix mirrors the existing insert() normalization pattern, with 5 new regression tests. Pull request submitted, pending review.",
+      tags: ["Open Source", "TypeScript", "Weaviate", "Vector Database"],
+      imageUrl: "/images/weaviate-oss/logo.svg",
+      demoUrl: "https://github.com/weaviate/typescript-client/pull/464",
+      repoUrl: "https://github.com/weaviate/typescript-client",
+      period: "Aug 2026",
+      role: "Open Source Contributor",
+      images: ["/images/weaviate-oss/logo.svg"],
     },
   ]
 
@@ -186,6 +220,12 @@ export default function Home() {
     { name: "Jest", icon: "jest" },
     { name: "Git", icon: "git" },
     { name: "AWS", icon: "aws" },
+    { name: "OpenAI API", icon: "openai" },
+    { name: "Vitest", icon: "vitest" },
+    { name: "Vercel AI SDK", icon: "vercel" },
+    { name: "LangChain.js", icon: "langchain" },
+    { name: "RAG", icon: "rag" },
+    { name: "Vector Databases", icon: "vectordb" },
   ]
 
   return (
@@ -202,8 +242,11 @@ export default function Home() {
             <ScrollLink href="#skills" className="text-sm font-medium hover:text-primary transition-colors">
               Skills
             </ScrollLink>
+            <ScrollLink href="#ai-projects" className="text-sm font-medium hover:text-primary transition-colors">
+              AI Projects
+            </ScrollLink>
             <ScrollLink href="#projects" className="text-sm font-medium hover:text-primary transition-colors">
-              Projects
+              Experience
             </ScrollLink>
             <ScrollLink href="#contact" className="text-sm font-medium hover:text-primary transition-colors">
               Contact
@@ -250,12 +293,12 @@ export default function Home() {
                 Hi, I'm <span className="text-primary">Osama Ansar</span>
               </h1>
               <p className="text-xl md:text-2xl text-muted-foreground mb-8">
-                Software Engineer with 5+ years of experience delivering scalable, maintainable web applications with
-                Angular, React, Vue, and Node.js.
+                Senior Software Engineer with 5+ years building scalable web applications, now focused on TypeScript
+                RAG systems, agentic pipelines, and LLM evaluation infrastructure.
               </p>
               <div className="flex flex-col sm:flex-row justify-center gap-4">
                 <Button asChild size="lg">
-                  <ScrollLink href="#projects">View My Work</ScrollLink>
+                  <ScrollLink href="#ai-projects">View My Work</ScrollLink>
                 </Button>
                 <Button variant="outline" size="lg" asChild>
                   <Link href={resumeUrl} target="_blank" rel="noopener noreferrer">
@@ -283,14 +326,15 @@ export default function Home() {
               </div>
               <div>
                 <p className="text-lg mb-4">
-                  I'm a Software Engineer with 5+ years of experience delivering scalable, maintainable, and
-                  high-performance web applications. I specialize in modern JavaScript frameworks (Angular, React, Vue)
-                  with a strong focus on clean code, responsive design, and real-time functionality.
+                  I'm a Senior Software Engineer with 5+ years of experience delivering scalable, maintainable, and
+                  high-performance web applications across Angular, React, Vue, and Node.js — and I'm currently
+                  focused on TypeScript-based RAG systems, agentic pipelines, and LLM evaluation infrastructure.
                 </p>
                 <p className="text-lg mb-4">
                   I'm known for cross-functional collaboration, UI/UX insight, and mentoring junior developers. My
-                  experience spans across various industries including trucking industry, marketing industry, digital signage, food delivery, fintech, and job
-                  matching platforms.
+                  experience spans across various industries including trucking, marketing, digital signage, food
+                  delivery, fintech, and job matching platforms — and I now contribute to open-source AI
+                  infrastructure (see the Weaviate TypeScript client below).
                 </p>
                 <p className="text-lg mb-6">
                   I hold a BS in Software Engineering from the University of Gujrat (2015-2019) with a CGPA of 3.7/4.0,
@@ -327,8 +371,35 @@ export default function Home() {
           </div>
         </section>
 
+        {/* AI / RAG Engineering Section */}
+        <section id="ai-projects" className="py-20">
+          <div className="container">
+            <h2 className="text-3xl font-bold mb-4 text-center">AI / RAG Engineering</h2>
+            <p className="text-muted-foreground text-center max-w-2xl mx-auto mb-12">
+              Independent projects and open-source contributions built to go deep on retrieval-augmented generation,
+              agentic systems, and LLM evaluation — all TypeScript, all with real tests and live demos.
+            </p>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {aiProjects.map((project, index) => (
+                <ProjectCard
+                  key={index}
+                  title={project.title}
+                  description={project.description}
+                  tags={project.tags}
+                  imageUrl={project.imageUrl}
+                  demoUrl={project.demoUrl}
+                  repoUrl={project.repoUrl}
+                  period={project.period}
+                  images={project.images}
+                  role={project.role}
+                />
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* Projects Section */}
-        <section id="projects" className="py-20">
+        <section id="projects" className="py-20 bg-muted/50">
           <div className="container">
             <h2 className="text-3xl font-bold mb-12 text-center">Professional Experience</h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -340,7 +411,6 @@ export default function Home() {
                   tags={project.tags}
                   imageUrl={project.imageUrl}
                   demoUrl={project.demoUrl}
-                  repoUrl={project.repoUrl}
                   period={project.period}
                   images={project.images}
                   company={project.company}
@@ -354,7 +424,7 @@ export default function Home() {
         </section>
 
         {/* Contact Section */}
-        <section id="contact" className="py-20 bg-muted/50">
+        <section id="contact" className="py-20">
           <div className="container">
             <h2 className="text-3xl font-bold mb-12 text-center">Get In Touch</h2>
             <div className="max-w-2xl mx-auto">

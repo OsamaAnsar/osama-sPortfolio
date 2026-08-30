@@ -23,13 +23,28 @@ export default function Home() {
   // Project data
   const projects = [
     {
+      title: "MenuLogic K12",
+      description:
+        "Full-stack development (Angular 21 + .NET 10) on a school-nutrition SaaS used by school districts to manage menus, recipes, and pricing. Built the product's Model Context Protocol (MCP) server, exposing recipe/ingredient/district tools to AI agents (Claude in Chat/Cowork) with a custom OAuth 2.1 + PKCE authorization-code flow and tenant-scoped tool authorization that mirrors the REST API's own role system, so an agent only ever sees what the equivalent web-app user could.",
+      tags: ["Angular", ".NET", "TypeScript", "MCP", "AI Agents", "OAuth 2.1"],
+      imageUrl: "/images/menulogic-k12/logo.svg",
+      demoUrl: "https://menulogic.io",
+      period: "Jan 2026 - Present",
+      company: "MenuLogic K12",
+      companyUrl: "https://menulogic.io",
+      role: "Senior Software Engineer",
+      companyDescription:
+        "A SaaS platform for K-12 school nutrition programs: real-time profit/loss per menu item, labor and overhead analytics, and recipe/menu management for school districts.",
+      images: ["/images/menulogic-k12/logo.svg"],
+    },
+    {
       title: "Truckpedia",
       description:
         "Led frontend development using Angular, React, and Vue. Optimized scalability, enhanced user performance, and implemented real-time updates across multiple devices.",
       tags: ["Angular", "React", "Vue", "Real-time"],
       imageUrl: "/truckpedia-logo.png",
       demoUrl: "https://truckpedia.com",
-      period: "Feb 2024 - Present",
+      period: "Feb 2024 - Jan 2026",
       company: "Truckpedia",
       companyUrl: "https://truckpedia.com",
       role: "Software Engineer",
@@ -332,8 +347,8 @@ export default function Home() {
                 </p>
                 <p className="text-lg mb-4">
                   I'm known for cross-functional collaboration, UI/UX insight, and mentoring junior developers. My
-                  experience spans across various industries including trucking, marketing, digital signage, food
-                  delivery, fintech, and job matching platforms — and I now contribute to open-source AI
+                  experience spans across various industries including K-12 school nutrition, trucking, marketing,
+                  digital signage, food delivery, fintech, and job matching platforms — and I now contribute to open-source AI
                   infrastructure (see the Weaviate TypeScript client below).
                 </p>
                 <p className="text-lg mb-6">

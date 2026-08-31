@@ -52,6 +52,20 @@ export default function Home() {
       images: ["/images/gostork/logo.png"],
     },
     {
+      title: "LiveArena",
+      description:
+        "An enterprise-grade pay-per-view live streaming platform (market-facing as LiveArena.io and IceCage.live) built to scale to 500,000 concurrent users via edge computing and intelligent caching. Built DRM-protected video streaming infrastructure (Widevine, PlayReady, FairPlay) and an event-based variant pricing engine, plus real-time payment celebrations via Pusher, dynamic watermarks, resumable S3 uploads via the TUS protocol, and seamless player switching during buffering. Also built a Kafka-consuming service for Studio, LiveArena's live broadcast-control app, that auto-generates video clips for a casino/iGaming client deployment.",
+      tags: ["Next.js", "Cloudflare Workers", "DRM", "Hono.js", "Kafka"],
+      imageUrl: "/images/streamflow/logo.svg",
+      demoUrl: "https://livearena.io",
+      company: "Broadcasting Platforms",
+      companyUrl: "https://broadcastingplatforms.com",
+      role: "Freelance Full-Stack Engineer",
+      companyDescription:
+        "Builds tailored live-streaming experiences and white-label platforms for brands across entertainment, sports, and iGaming — including LiveArena, a pay-per-view combat-sports streaming platform, and Studio, a live broadcast-control app.",
+      images: ["/images/streamflow/logo.svg"],
+    },
+    {
       title: "Truckpedia",
       description:
         "Led frontend development using Angular, React, and Vue. Optimized scalability, enhanced user performance, and implemented real-time updates across multiple devices.",

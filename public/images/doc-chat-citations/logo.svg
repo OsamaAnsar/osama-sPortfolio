@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
+  <rect width="400" height="400" fill="#0b0f14"/>
+  <rect x="120" y="90" width="110" height="140" rx="8" fill="none" stroke="#8b98a5" stroke-width="5"/>
+  <line x1="140" y1="120" x2="210" y2="120" stroke="#8b98a5" stroke-width="4"/>
+  <line x1="140" y1="140" x2="210" y2="140" stroke="#8b98a5" stroke-width="4"/>
+  <line x1="140" y1="160" x2="190" y2="160" stroke="#8b98a5" stroke-width="4"/>
+  <circle cx="245" cy="185" r="30" fill="#0b0f14" stroke="#58a6ff" stroke-width="5"/>
+  <text x="245" y="192" font-family="-apple-system,Segoe UI,Roboto,sans-serif" font-size="20" font-weight="700" fill="#58a6ff" text-anchor="middle">1</text>
+  <text x="200" y="270" font-family="-apple-system,Segoe UI,Roboto,sans-serif" font-size="26" font-weight="700" fill="#e6edf3" text-anchor="middle">doc-chat-citations</text>
+  <text x="200" y="298" font-family="-apple-system,Segoe UI,Roboto,sans-serif" font-size="15" fill="#8b98a5" text-anchor="middle">Every claim, cited</text>
+</svg>

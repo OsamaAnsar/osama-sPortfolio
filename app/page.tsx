@@ -209,6 +209,30 @@ export default function Home() {
   // AI / RAG engineering projects
   const aiProjects = [
     {
+      title: "generative-ui-chat",
+      description:
+        "A chat assistant that streams back real, interactive React components instead of plain text — ask about revenue and get a live animated chart, ask to compare plans and get a real comparison table, ask to book a demo and get a working confirmation card. Built on the Vercel AI SDK's tool-calling pattern. The zero-cost public demo runs the exact same streamText pipeline as a real deployment — only the underlying model is swapped, using the AI SDK's own test-mocking primitives rather than a faked frontend.",
+      tags: ["TypeScript", "Next.js", "Vercel AI SDK", "Generative UI", "Tool Calling"],
+      imageUrl: "/images/generative-ui-chat/logo.svg",
+      demoUrl: "https://generative-ui-chat-rouge.vercel.app",
+      repoUrl: "https://github.com/OsamaAnsar/generative-ui-chat",
+      period: "Aug 2026",
+      role: "Independent Project",
+      images: ["/images/generative-ui-chat/logo.svg"],
+    },
+    {
+      title: "doc-chat-citations",
+      description:
+        "A documentation chat assistant where every claim is cited and clicking a citation jumps straight to the exact retrieved passage. From-scratch BM25 retrieval (no vector DB), a two-pane UI with a live-updating source panel, and streamed answers grounded in a demo knowledge base. This is the single most commonly requested AI feature on Upwork, built the way it should actually ship: with the citation trail intact end to end, not just in a log file.",
+      tags: ["TypeScript", "RAG", "BM25", "Vercel AI SDK", "Citations"],
+      imageUrl: "/images/doc-chat-citations/logo.svg",
+      demoUrl: "https://doc-chat-citations.vercel.app",
+      repoUrl: "https://github.com/OsamaAnsar/doc-chat-citations",
+      period: "Aug 2026",
+      role: "Independent Project",
+      images: ["/images/doc-chat-citations/logo.svg"],
+    },
+    {
       title: "rag-eval-harness",
       description:
         "An LLM-judge evaluation harness for RAG pipelines: faithfulness, answer relevance, context precision, and context recall, with a CI regression gate. Correctly catches planted hallucinations in the sample dataset. Pluggable Judge interface (real OpenAI judge + a dependency-free FakeJudge for tests/CI), 9 unit tests with no API key required, auto-deployed live report on every push.",

@@ -27,7 +27,7 @@ export default function Home() {
       description:
         "Full-stack development (Angular 21 + .NET 10) on a school-nutrition SaaS used by school districts to manage menus, recipes, and pricing. Built the product's Model Context Protocol (MCP) server, exposing recipe/ingredient/district tools to AI agents (Claude in Chat/Cowork) with a custom OAuth 2.1 + PKCE authorization-code flow and tenant-scoped tool authorization that mirrors the REST API's own role system, so an agent only ever sees what the equivalent web-app user could.",
       tags: ["Angular", ".NET", "TypeScript", "MCP", "AI Agents", "OAuth 2.1"],
-      imageUrl: "/images/menulogic-k12/logo.svg",
+      imageUrl: "/images/menulogic-k12/logo.png",
       demoUrl: "https://menulogic.io",
       period: "Jan 2026 - Present",
       company: "MenuLogic K12",
@@ -35,7 +35,7 @@ export default function Home() {
       role: "Senior Software Engineer",
       companyDescription:
         "A SaaS platform for K-12 school nutrition programs: real-time profit/loss per menu item, labor and overhead analytics, and recipe/menu management for school districts.",
-      images: ["/images/menulogic-k12/logo.svg"],
+      images: ["/images/menulogic-k12/logo.png"],
     },
     {
       title: "Truckpedia",

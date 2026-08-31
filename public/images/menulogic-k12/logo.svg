@@ -1,9 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
-  <rect width="400" height="400" fill="#0f1420"/>
-  <circle cx="200" cy="150" r="70" fill="none" stroke="#e6197e" stroke-width="6"/>
-  <path d="M170 145 q30 -35 60 0" fill="none" stroke="#1fb5a3" stroke-width="8" stroke-linecap="round"/>
-  <circle cx="178" cy="135" r="7" fill="#e6197e"/>
-  <circle cx="222" cy="135" r="7" fill="#1fb5a3"/>
-  <text x="200" y="270" font-family="-apple-system,Segoe UI,Roboto,sans-serif" font-size="26" font-weight="700" fill="#e6edf3" text-anchor="middle">MenuLogic K12</text>
-  <text x="200" y="300" font-family="-apple-system,Segoe UI,Roboto,sans-serif" font-size="15" fill="#8b98a5" text-anchor="middle">School nutrition SaaS</text>
-</svg>

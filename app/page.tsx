@@ -269,6 +269,18 @@ export default function Home() {
       images: ["/images/hnsw-vector-index/logo.svg"],
     },
     {
+      title: "ride-fare-advisor",
+      description:
+        "A natural-language trip advisor for Lahore: tell it a pickup and drop-off, and it calls a real tool that resolves both locations, estimates distance/time with a from-scratch Haversine + road-factor model, and quotes Uber, Yango, and InDrive fares through a rush-hour surge model — then the AI grounds its recommendation in those actual computed numbers, not canned copy. Installable as a mobile-first PWA.",
+      tags: ["TypeScript", "Next.js", "Vercel AI SDK", "Tool Calling", "PWA"],
+      imageUrl: "/images/ride-fare-advisor/logo.svg",
+      demoUrl: "https://ride-fare-advisor.vercel.app",
+      repoUrl: "https://github.com/OsamaAnsar/ride-fare-advisor",
+      period: "Aug 2026",
+      role: "Independent Project",
+      images: ["/images/ride-fare-advisor/logo.svg"],
+    },
+    {
       title: "Open Source: weaviate-client",
       description:
         "Diagnosed and fixed a silent data-loss bug in Weaviate's official TypeScript client: data.ingest() accepted the documented unwrapped input shape but stored it empty. Fix mirrors the existing insert() normalization pattern, with 5 new regression tests. Pull request submitted, pending review.",

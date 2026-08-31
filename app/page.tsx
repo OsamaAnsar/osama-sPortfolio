@@ -205,6 +205,18 @@ export default function Home() {
       images: ["/images/agentic-rag/logo.svg"],
     },
     {
+      title: "hnsw-vector-index",
+      description:
+        "HNSW (Hierarchical Navigable Small World) — the approximate nearest-neighbor graph algorithm production vector databases use internally — implemented from scratch, no ANN library. Benchmarked against a brute-force exact baseline: recall@k climbs cleanly from 66% to 100% as efSearch increases, the textbook HNSW curve. 22 unit tests including recall correctness against brute-force ground truth on a clustered dataset.",
+      tags: ["TypeScript", "Algorithms", "Vector Search", "HNSW", "Vitest"],
+      imageUrl: "/images/hnsw-vector-index/logo.svg",
+      demoUrl: "https://osamaansar.github.io/hnsw-vector-index/",
+      repoUrl: "https://github.com/OsamaAnsar/hnsw-vector-index",
+      period: "Aug 2026",
+      role: "Independent Project",
+      images: ["/images/hnsw-vector-index/logo.svg"],
+    },
+    {
       title: "Open Source: weaviate-client",
       description:
         "Diagnosed and fixed a silent data-loss bug in Weaviate's official TypeScript client: data.ingest() accepted the documented unwrapped input shape but stored it empty. Fix mirrors the existing insert() normalization pattern, with 5 new regression tests. Pull request submitted, pending review.",

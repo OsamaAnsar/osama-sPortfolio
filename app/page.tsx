@@ -38,6 +38,20 @@ export default function Home() {
       images: ["/images/menulogic-k12/logo.png"],
     },
     {
+      title: "GoStork",
+      description:
+        "A fertility services marketplace connecting intended parents with egg donor agencies, surrogacy agencies, IVF clinics, sperm banks, law firms, and adoption agencies. Built an AI-powered PDF extraction system using GPT-4 to automatically extract and structure agency profile data from unstructured PDFs, and built the platform's real-time messaging infrastructure (WebSocket chat). Also developed cost detail pages and maintained data scrapers.",
+      tags: ["Node.js", "TypeScript", "OpenAI GPT-4", "PostgreSQL", "Kubernetes"],
+      imageUrl: "/images/gostork/logo.png",
+      demoUrl: "https://gostork.com",
+      company: "GoStork",
+      companyUrl: "https://gostork.com",
+      role: "Freelance Full-Stack Developer",
+      companyDescription:
+        "A comprehensive fertility services marketplace using AI to transform unstructured agency data into searchable, structured profiles.",
+      images: ["/images/gostork/logo.png"],
+    },
+    {
       title: "Truckpedia",
       description:
         "Led frontend development using Angular, React, and Vue. Optimized scalability, enhanced user performance, and implemented real-time updates across multiple devices.",

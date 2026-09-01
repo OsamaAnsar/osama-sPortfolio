@@ -209,16 +209,16 @@ export default function Home() {
   // AI / RAG engineering projects
   const aiProjects = [
     {
-      title: "Prism",
+      title: "Refract",
       description:
         "A hybrid RAG system that shows its work: BM25 (lexical) and HNSW (vector) retrieval run in parallel and get fused with Reciprocal Rank Fusion, with multi-hop agentic decomposition for genuinely cross-topic questions. Instead of hiding the pipeline behind a spinner, the UI visualizes every retrieval score, fusion rank, and sub-question live as it runs — unifying the from-scratch BM25, HNSW, and multi-hop reasoning work from across this portfolio into one flagship system.",
       tags: ["TypeScript", "RAG", "BM25", "HNSW", "Reciprocal Rank Fusion", "Agentic"],
-      imageUrl: "/images/prism-rag/logo.svg",
-      demoUrl: "https://prism-rag-xi.vercel.app",
-      repoUrl: "https://github.com/OsamaAnsar/prism-rag",
+      imageUrl: "/images/refract-rag/logo.svg",
+      demoUrl: "https://refract-rag.vercel.app",
+      repoUrl: "https://github.com/OsamaAnsar/refract-rag",
       period: "Sep 2026",
       role: "Independent Project",
-      images: ["/images/prism-rag/logo.svg"],
+      images: ["/images/refract-rag/logo.svg"],
     },
     {
       title: "generative-ui-chat",

@@ -209,6 +209,18 @@ export default function Home() {
   // AI / RAG engineering projects
   const aiProjects = [
     {
+      title: "Prism",
+      description:
+        "A hybrid RAG system that shows its work: BM25 (lexical) and HNSW (vector) retrieval run in parallel and get fused with Reciprocal Rank Fusion, with multi-hop agentic decomposition for genuinely cross-topic questions. Instead of hiding the pipeline behind a spinner, the UI visualizes every retrieval score, fusion rank, and sub-question live as it runs — unifying the from-scratch BM25, HNSW, and multi-hop reasoning work from across this portfolio into one flagship system.",
+      tags: ["TypeScript", "RAG", "BM25", "HNSW", "Reciprocal Rank Fusion", "Agentic"],
+      imageUrl: "/images/prism-rag/logo.svg",
+      demoUrl: "https://prism-rag-xi.vercel.app",
+      repoUrl: "https://github.com/OsamaAnsar/prism-rag",
+      period: "Sep 2026",
+      role: "Independent Project",
+      images: ["/images/prism-rag/logo.svg"],
+    },
+    {
       title: "generative-ui-chat",
       description:
         "A chat assistant that streams back real, interactive React components instead of plain text — ask about revenue and get a live animated chart, ask to compare plans and get a real comparison table, ask to book a demo and get a working confirmation card. Built on the Vercel AI SDK's tool-calling pattern. The zero-cost public demo runs the exact same streamText pipeline as a real deployment — only the underlying model is swapped, using the AI SDK's own test-mocking primitives rather than a faked frontend.",

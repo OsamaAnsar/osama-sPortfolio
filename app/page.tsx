@@ -214,8 +214,8 @@ export default function Home() {
     {
       title: "DevSignal",
       description:
-        "An AI-powered technology intelligence dashboard: a TypeScript scraper collects Hacker News and GitHub Trending, normalizes raw HTML into typed signals, and enriches each item with topics, sentiment, and an executive briefing. Interactive Recharts views expose topic momentum, language trends, and the highest-signal stories, while GitHub Actions refreshes and deploys the dataset daily. Includes a transparent deterministic mode so the public demo works without exposing an API key.",
-      tags: ["TypeScript", "Web Scraping", "AI Analytics", "Data Visualization", "GitHub Actions"],
+        "Collects public signals from roughly ten developer sources — Hacker News, GitHub Trending, npm, arXiv, Lobsters, Stack Overflow, DEV, InfoQ, YouTube — and turns them into an editorial dashboard: topic momentum, trending languages, and cross-source technology clusters mapped on an interactive radar, with 90 days of daily observations so real trends can emerge. Ships on-device AI via Transformers.js: a quantized DistilBERT classifies story tone and powers \"Ask DevSignal\", a browser-only semantic search that answers natural-language questions with ranked, clickable evidence — no API key. Optional OpenAI enrichment runs server-side in the scheduled pipeline.",
+      tags: ["TypeScript", "Transformers.js", "On-device AI", "Semantic Search", "Data Viz", "GitHub Actions"],
       imageUrl: "/images/devsignal/logo.svg",
       demoUrl: "https://osamaansar.github.io/devsignal/",
       repoUrl: "https://github.com/OsamaAnsar/devsignal",
@@ -322,7 +322,7 @@ export default function Home() {
   ]
 
   // Flagship demos, surfaced at the top of the AI section with an embedded live preview
-  const featuredTitles = new Set(["Refract", "generative-ui-chat", "doc-chat-citations"])
+  const featuredTitles = new Set(["Refract", "DevSignal", "generative-ui-chat", "doc-chat-citations"])
   const featuredProjects = [
     {
       title: "Refract",
@@ -333,6 +333,16 @@ export default function Home() {
       repoUrl: "https://github.com/OsamaAnsar/refract-rag",
       tags: ["TypeScript", "RAG", "BM25", "HNSW", "Reciprocal Rank Fusion", "Agentic"],
       logoUrl: "/images/refract-rag/logo.svg",
+    },
+    {
+      title: "DevSignal",
+      tagline: "A quieter way to read the developer internet",
+      description:
+        "Collects public signals from ~10 developer sources — Hacker News, GitHub Trending, npm, arXiv, Stack Overflow, YouTube and more — and turns them into an editorial dashboard: topic momentum, trending languages, and cross-source clusters on an interactive radar. Ships on-device AI via Transformers.js: \"Ask DevSignal\" answers natural-language questions with ranked, clickable evidence, entirely in the browser.",
+      demoUrl: "https://osamaansar.github.io/devsignal/",
+      repoUrl: "https://github.com/OsamaAnsar/devsignal",
+      tags: ["TypeScript", "Transformers.js", "On-device AI", "Semantic Search", "Data Viz", "GitHub Actions"],
+      logoUrl: "/images/devsignal/logo.svg",
     },
     {
       title: "generative-ui-chat",

@@ -16,11 +16,10 @@ import {
   SiGit,
   SiJest,
   SiDocker,
-  SiAmazonwebservices,
-  SiOpenai,
   SiVitest,
   SiVercel,
 } from "react-icons/si"
+import { TbBrandAws, TbBrandOpenai } from "react-icons/tb"
 
 interface SkillBadgeProps {
   name: string
@@ -63,9 +62,9 @@ export function SkillBadge({ name, icon }: SkillBadgeProps) {
       case "docker":
         return <SiDocker className="h-8 w-8 text-blue-600" />
       case "aws":
-        return <SiAmazonwebservices className="h-8 w-8 text-orange-400" />
+        return <TbBrandAws className="h-8 w-8 text-orange-400" />
       case "openai":
-        return <SiOpenai className="h-8 w-8" />
+        return <TbBrandOpenai className="h-8 w-8" />
       case "vitest":
         return <SiVitest className="h-8 w-8 text-lime-500" />
       case "vercel":

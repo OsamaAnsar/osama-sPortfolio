@@ -3,6 +3,7 @@ import Link from "next/link"
 
 import { Button } from "@/components/ui/button"
 import { ProjectCard } from "@/components/project-card"
+import { FeaturedDemo } from "@/components/featured-demo"
 import { SkillBadge } from "@/components/skill-badge"
 import { ContactForm } from "@/components/contact-form"
 import { ScrollLink } from "@/components/scroll-link"
@@ -12,6 +13,8 @@ import { DarkModeIndicator } from "@/components/dark-mode-indicator"
 export default function Home() {
   // Resume link from Google Drive
   const resumeUrl = "https://drive.google.com/file/d/1vuqQV00s07JJqIFJ0CabMj9OeGN0rvWe/view?usp=sharing"
+  const resumeDownloadUrl =
+    "https://drive.google.com/uc?export=download&id=1vuqQV00s07JJqIFJ0CabMj9OeGN0rvWe"
 
   // Social media links
   const socialLinks = {
@@ -318,6 +321,41 @@ export default function Home() {
     },
   ]
 
+  // Flagship demos, surfaced at the top of the AI section with an embedded live preview
+  const featuredTitles = new Set(["Refract", "generative-ui-chat", "doc-chat-citations"])
+  const featuredProjects = [
+    {
+      title: "Refract",
+      tagline: "Hybrid RAG that shows its work",
+      description:
+        "BM25 (lexical) and HNSW (vector) retrieval run in parallel and get fused with Reciprocal Rank Fusion, with multi-hop agentic decomposition for genuinely cross-topic questions. The UI visualizes every retrieval score, fusion rank, and sub-question live as it runs.",
+      demoUrl: "https://refract-rag.vercel.app",
+      repoUrl: "https://github.com/OsamaAnsar/refract-rag",
+      tags: ["TypeScript", "RAG", "BM25", "HNSW", "Reciprocal Rank Fusion", "Agentic"],
+      logoUrl: "/images/refract-rag/logo.svg",
+    },
+    {
+      title: "generative-ui-chat",
+      tagline: "Chat that streams back real React components",
+      description:
+        "Ask about revenue and get a live animated chart; ask to compare plans and get a real comparison table; ask to book a demo and get a working confirmation card. Built on the Vercel AI SDK tool-calling pattern, with the exact same streamText pipeline as a real deployment.",
+      demoUrl: "https://generative-ui-chat-rouge.vercel.app",
+      repoUrl: "https://github.com/OsamaAnsar/generative-ui-chat",
+      tags: ["TypeScript", "Next.js", "Vercel AI SDK", "Generative UI", "Tool Calling"],
+      logoUrl: "/images/generative-ui-chat/logo.svg",
+    },
+    {
+      title: "doc-chat-citations",
+      tagline: "Every claim cited, every citation clickable",
+      description:
+        "A documentation chat assistant where clicking a citation jumps straight to the exact retrieved passage. From-scratch BM25 retrieval (no vector DB), a two-pane UI with a live-updating source panel, and streamed answers grounded in a demo knowledge base.",
+      demoUrl: "https://doc-chat-citations.vercel.app",
+      repoUrl: "https://github.com/OsamaAnsar/doc-chat-citations",
+      tags: ["TypeScript", "RAG", "BM25", "Vercel AI SDK", "Citations"],
+      logoUrl: "/images/doc-chat-citations/logo.svg",
+    },
+  ]
+
   // Skills data
   const skills = [
     { name: "JavaScript", icon: "js" },
@@ -404,23 +442,36 @@ export default function Home() {
         <section className="py-24 md:py-32 bg-gradient-to-b from-primary/10 to-background">
           <div className="container">
             <div className="max-w-3xl mx-auto text-center">
-              <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-6">
-                Hi, I'm <span className="text-primary">Osama Ansar</span>
+              <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-4">
+                Osama Ansar
               </h1>
-              <p className="text-xl md:text-2xl text-muted-foreground mb-8">
-                Senior Software Engineer with 5+ years building scalable web applications, now focused on TypeScript
-                RAG systems, agentic pipelines, and LLM evaluation infrastructure.
+              <p className="text-2xl md:text-3xl font-semibold text-primary mb-4">
+                AI / RAG Engineer
+              </p>
+              <p className="text-lg md:text-xl text-muted-foreground mb-4">
+                Senior Software Engineer, 7+ years. I build TypeScript retrieval-augmented generation systems,
+                agentic pipelines, and LLM evaluation infrastructure &mdash; each one shipped with real tests and a
+                live demo.
+              </p>
+              <p className="text-sm md:text-base text-muted-foreground mb-8">
+                Lahore, Pakistan &middot; Open to remote &middot; UTC+5, overlapping US mornings and the full EU workday
               </p>
               <div className="flex flex-col sm:flex-row justify-center gap-4">
                 <Button asChild size="lg">
-                  <ScrollLink href="#ai-projects">View My Work</ScrollLink>
+                  <ScrollLink href="#ai-projects">View AI Projects</ScrollLink>
                 </Button>
                 <Button variant="outline" size="lg" asChild>
-                  <Link href={resumeUrl} target="_blank" rel="noopener noreferrer">
-                    Download Resume
+                  <Link href={resumeDownloadUrl} target="_blank" rel="noopener noreferrer">
+                    Download Résumé
                   </Link>
                 </Button>
               </div>
+              <p className="text-sm text-muted-foreground mt-4">
+                or{" "}
+                <Link href={socialLinks.email} className="underline hover:text-primary">
+                  email me directly
+                </Link>
+              </p>
             </div>
           </div>
         </section>
@@ -441,7 +492,7 @@ export default function Home() {
               </div>
               <div>
                 <p className="text-lg mb-4">
-                  I'm a Senior Software Engineer with 5+ years of experience delivering scalable, maintainable, and
+                  I'm a Senior Software Engineer with 7+ years of experience delivering scalable, maintainable, and
                   high-performance web applications across Angular, React, Vue, and Node.js — and I'm currently
                   focused on TypeScript-based RAG systems, agentic pipelines, and LLM evaluation infrastructure.
                 </p>
@@ -494,21 +545,29 @@ export default function Home() {
               Independent projects and open-source contributions built to go deep on retrieval-augmented generation,
               agentic systems, and LLM evaluation — all TypeScript, all with real tests and live demos.
             </p>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {aiProjects.map((project, index) => (
-                <ProjectCard
-                  key={index}
-                  title={project.title}
-                  description={project.description}
-                  tags={project.tags}
-                  imageUrl={project.imageUrl}
-                  demoUrl={project.demoUrl}
-                  repoUrl={project.repoUrl}
-                  period={project.period}
-                  images={project.images}
-                  role={project.role}
-                />
+            <div className="space-y-8 mb-12">
+              {featuredProjects.map((project) => (
+                <FeaturedDemo key={project.title} {...project} />
               ))}
+            </div>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {aiProjects
+                .filter((project) => !featuredTitles.has(project.title))
+                .map((project, index) => (
+                  <ProjectCard
+                    key={index}
+                    title={project.title}
+                    description={project.description}
+                    tags={project.tags}
+                    imageUrl={project.imageUrl}
+                    demoUrl={project.demoUrl}
+                    repoUrl={project.repoUrl}
+                    period={project.period}
+                    images={project.images}
+                    role={project.role}
+                    ctaLabel={project.demoUrl.includes("/pull/") ? "View pull request" : "Live demo"}
+                  />
+                ))}
             </div>
           </div>
         </section>

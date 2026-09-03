@@ -22,6 +22,7 @@ interface ProjectCardProps {
   companyUrl?: string
   role?: string
   companyDescription?: string
+  ctaLabel?: string
 }
 
 export function ProjectCard({
@@ -37,6 +38,7 @@ export function ProjectCard({
   companyUrl,
   role,
   companyDescription,
+  ctaLabel = "Visit Website",
 }: ProjectCardProps) {
   const [isGalleryOpen, setIsGalleryOpen] = useState(false)
 
@@ -137,7 +139,7 @@ export function ProjectCard({
           >
             <Link href={demoUrl} target="_blank" rel="noopener noreferrer">
               <ExternalLink className="mr-2 h-4 w-4" />
-              Visit Website
+              {ctaLabel}
             </Link>
           </Button>
         </CardFooter>

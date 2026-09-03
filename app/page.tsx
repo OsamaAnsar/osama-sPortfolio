@@ -209,6 +209,18 @@ export default function Home() {
   // AI / RAG engineering projects
   const aiProjects = [
     {
+      title: "DevSignal",
+      description:
+        "An AI-powered technology intelligence dashboard: a TypeScript scraper collects Hacker News and GitHub Trending, normalizes raw HTML into typed signals, and enriches each item with topics, sentiment, and an executive briefing. Interactive Recharts views expose topic momentum, language trends, and the highest-signal stories, while GitHub Actions refreshes and deploys the dataset daily. Includes a transparent deterministic mode so the public demo works without exposing an API key.",
+      tags: ["TypeScript", "Web Scraping", "AI Analytics", "Data Visualization", "GitHub Actions"],
+      imageUrl: "/images/devsignal/logo.svg",
+      demoUrl: "https://osamaansar.github.io/devsignal/",
+      repoUrl: "https://github.com/OsamaAnsar/devsignal",
+      period: "Sep 2026",
+      role: "Independent Project",
+      images: ["/images/devsignal/logo.svg"],
+    },
+    {
       title: "Refract",
       description:
         "A hybrid RAG system that shows its work: BM25 (lexical) and HNSW (vector) retrieval run in parallel and get fused with Reciprocal Rank Fusion, with multi-hop agentic decomposition for genuinely cross-topic questions. Instead of hiding the pipeline behind a spinner, the UI visualizes every retrieval score, fusion rank, and sub-question live as it runs — unifying the from-scratch BM25, HNSW, and multi-hop reasoning work from across this portfolio into one flagship system.",

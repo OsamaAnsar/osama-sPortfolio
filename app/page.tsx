@@ -11,10 +11,9 @@ import { ThemeToggle } from "@/components/theme-toggle"
 import { DarkModeIndicator } from "@/components/dark-mode-indicator"
 
 export default function Home() {
-  // Resume link from Google Drive
-  const resumeUrl = "https://drive.google.com/file/d/1vuqQV00s07JJqIFJ0CabMj9OeGN0rvWe/view?usp=sharing"
-  const resumeDownloadUrl =
-    "https://drive.google.com/uc?export=download&id=1vuqQV00s07JJqIFJ0CabMj9OeGN0rvWe"
+  // Resume — served locally from public/, no more stale Google Drive link
+  const resumeUrl = "/Osama-Ansar-Resume.pdf"
+  const resumeDownloadUrl = "/Osama-Ansar-Resume.pdf"
 
   // Social media links
   const socialLinks = {
@@ -471,7 +470,7 @@ export default function Home() {
                   <ScrollLink href="#ai-projects">View AI Projects</ScrollLink>
                 </Button>
                 <Button variant="outline" size="lg" asChild>
-                  <Link href={resumeDownloadUrl} target="_blank" rel="noopener noreferrer">
+                  <Link href={resumeDownloadUrl} download="Osama-Ansar-Resume.pdf">
                     Download Résumé
                   </Link>
                 </Button>

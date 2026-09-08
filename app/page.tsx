@@ -211,6 +211,42 @@ export default function Home() {
   // AI / RAG engineering projects
   const aiProjects = [
     {
+      title: "MELAI Engineering Lab",
+      description:
+        "A workbench that makes AI systems measurable and reproducible instead of black boxes. Three labs shipped so far: run one prompt across several models and compare latency, tokens and cost side by side; chunk a document and compare BM25, vector and hybrid (Reciprocal Rank Fusion) retrieval with the per-method rank behind every hybrid hit; then score a retrieval config against a dataset — recall@k, precision@k, MRR, nDCG, hit-rate — streamed case by case. BM25, RRF, cosine search and the eval metrics are all from scratch. Provider SDKs (Anthropic, OpenAI, Ollama) sit behind one interface, pricing lives in a single calculator, and every experiment persists the fully-resolved request so it replays exactly. pnpm + Turborepo monorepo, Fastify + SSE, Drizzle + pgvector, runs with zero keys and zero Docker via built-in mocks.",
+      tags: ["TypeScript", "RAG", "LLM Evaluation", "LLM-as-judge", "pgvector", "Fastify", "Monorepo", "SSE"],
+      imageUrl: "/images/melai-lab/logo.svg",
+      demoUrl: "https://github.com/OsamaAnsar/MELAI-Engineering-lab",
+      repoUrl: "https://github.com/OsamaAnsar/MELAI-Engineering-lab",
+      period: "Sep 2026",
+      role: "Independent Project",
+      images: ["/images/melai-lab/logo.svg"],
+    },
+    {
+      title: "Retrieval Playground",
+      description:
+        "Paste a document, ask a question, mark which chunks are relevant, and watch BM25, dense embeddings and their Reciprocal Rank Fusion each rank the results — then get recall@k, precision@k, MRR, hit@k and nDCG@k for all three. BM25, RRF and every metric are hand-written; the dense side runs all-MiniLM-L6-v2 in the browser via Transformers.js (WASM), so the whole thing is a static page with no backend, no API key and no rate limits. Deployed as a Hugging Face Space.",
+      tags: ["TypeScript", "Transformers.js", "In-browser AI", "BM25", "Reciprocal Rank Fusion", "Retrieval Metrics"],
+      imageUrl: "/images/retrieval-playground/logo.svg",
+      demoUrl: "https://osama-ansar-retrieval-playground.static.hf.space",
+      repoUrl: "https://huggingface.co/spaces/Osama-Ansar/retrieval-playground/tree/main",
+      period: "Sep 2026",
+      role: "Independent Project",
+      images: ["/images/retrieval-playground/logo.svg"],
+    },
+    {
+      title: "Neural Atlas",
+      description:
+        "An interactive guide to how machine learning actually works — 35 lessons across seven tracks, each with a live widget you change and re-run: a feed-forward network you push signals through, attention weights that re-mix as you drag a query, a bottom-up merge sort, Dijkstra settling a weighted graph, PageRank converging. The Retrieval & RAG track and the LLM-decoding lesson port the from-scratch chunking, BM25, hybrid fusion and eval metrics from MELAI into browser visualizations. Next.js, no build-time content pipeline, deployed on Netlify.",
+      tags: ["TypeScript", "Next.js", "RAG", "Interactive Visualization", "Transformers"],
+      imageUrl: "/images/neural-atlas/logo.svg",
+      demoUrl: "https://neural-atlas-osamaansar.netlify.app",
+      repoUrl: "https://github.com/OsamaAnsar/neural-atlas",
+      period: "Sep 2026",
+      role: "Independent Project",
+      images: ["/images/neural-atlas/logo.svg"],
+    },
+    {
       title: "DevSignal",
       description:
         "Collects public signals from roughly ten developer sources — Hacker News, GitHub Trending, npm, arXiv, Lobsters, Stack Overflow, DEV, InfoQ, YouTube — and turns them into an editorial dashboard: topic momentum, trending languages, and cross-source technology clusters mapped on an interactive radar, with 90 days of daily observations so real trends can emerge. Ships on-device AI via Transformers.js: a quantized DistilBERT classifies story tone and powers \"Ask DevSignal\", a browser-only semantic search that answers natural-language questions with ranked, clickable evidence — no API key. Optional OpenAI enrichment runs server-side in the scheduled pipeline.",
@@ -307,22 +343,38 @@ export default function Home() {
       images: ["/images/ride-fare-advisor/logo.svg"],
     },
     {
-      title: "Open Source: weaviate-client",
+      title: "Open Source: Vector-DB & Agent SDKs",
       description:
-        "Diagnosed and fixed a silent data-loss bug in Weaviate's official TypeScript client: data.ingest() accepted the documented unwrapped input shape but stored it empty. Fix mirrors the existing insert() normalization pattern, with 5 new regression tests. Pull request submitted, pending review.",
-      tags: ["Open Source", "TypeScript", "Weaviate", "Vector Database"],
+        "Scoped bug fixes and feature work across the official TypeScript SDKs for Weaviate, Qdrant, Turso (libSQL) and Google's Agent2Agent protocol. Highlights: a maintainer-approved generative-module config builder and a silent data-loss fix in Weaviate's client; a dropped reverse-proxy path prefix in Qdrant's URL parsing; a UTF-8 vs UTF-16 byte-limit mismatch in libSQL's SQL cache; and pagination that the A2A REST transport was silently ignoring. Each PR mirrors the repo's existing patterns and ships with regression tests.",
+      tags: ["Open Source", "TypeScript", "Weaviate", "Qdrant", "Turso", "Agent2Agent"],
       imageUrl: "/images/weaviate-oss/logo.svg",
-      demoUrl: "https://github.com/weaviate/typescript-client/pull/464",
-      repoUrl: "https://github.com/weaviate/typescript-client",
-      period: "Aug 2026",
+      demoUrl: "https://github.com/weaviate/typescript-client/pull/465",
+      repoUrl: "https://github.com/OsamaAnsar",
+      period: "Aug–Sep 2026",
       role: "Open Source Contributor",
       images: ["/images/weaviate-oss/logo.svg"],
     },
   ]
 
   // Flagship demos, surfaced at the top of the AI section with an embedded live preview
-  const featuredTitles = new Set(["Refract", "DevSignal", "generative-ui-chat", "doc-chat-citations"])
+  const featuredTitles = new Set([
+    "Retrieval Playground",
+    "Refract",
+    "DevSignal",
+    "generative-ui-chat",
+    "doc-chat-citations",
+  ])
   const featuredProjects = [
+    {
+      title: "Retrieval Playground",
+      tagline: "Lexical vs neural vs fused, scored in-browser",
+      description:
+        "Paste a document, ask a question, mark the relevant chunks, and watch BM25, dense embeddings and Reciprocal Rank Fusion each rank the results — with recall@k, precision@k, MRR, hit@k and nDCG@k for all three. BM25, RRF and the metrics are hand-written; the embeddings run all-MiniLM-L6-v2 in your browser via Transformers.js. No backend, no API key.",
+      demoUrl: "https://osama-ansar-retrieval-playground.static.hf.space",
+      repoUrl: "https://huggingface.co/spaces/Osama-Ansar/retrieval-playground/tree/main",
+      tags: ["TypeScript", "Transformers.js", "In-browser AI", "BM25", "Reciprocal Rank Fusion", "Retrieval Metrics"],
+      logoUrl: "/images/retrieval-playground/logo.svg",
+    },
     {
       title: "Refract",
       tagline: "Hybrid RAG that shows its work",
@@ -551,8 +603,9 @@ export default function Home() {
           <div className="container">
             <h2 className="text-3xl font-bold mb-4 text-center">AI / RAG Engineering</h2>
             <p className="text-muted-foreground text-center max-w-2xl mx-auto mb-12">
-              Independent projects and open-source contributions built to go deep on retrieval-augmented generation,
-              agentic systems, and LLM evaluation — all TypeScript, all with real tests and live demos.
+              An engineering lab plus a set of focused independent projects and open-source contributions, all built
+              to go deep on retrieval, agentic systems, and LLM evaluation — TypeScript, from-scratch algorithms,
+              real tests, and demos you can run.
             </p>
             <div className="space-y-8 mb-12">
               {featuredProjects.map((project) => (
@@ -574,7 +627,13 @@ export default function Home() {
                     period={project.period}
                     images={project.images}
                     role={project.role}
-                    ctaLabel={project.demoUrl.includes("/pull/") ? "View pull request" : "Live demo"}
+                    ctaLabel={
+                      project.demoUrl.includes("/pull/")
+                        ? "View pull request"
+                        : project.demoUrl.includes("github.com")
+                          ? "View repo"
+                          : "Live demo"
+                    }
                   />
                 ))}
             </div>

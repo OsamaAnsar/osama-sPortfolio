@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
+  <rect width="400" height="400" fill="#0a0b0f"/>
+  <g stroke="#2b3440" stroke-width="3">
+    <line x1="110" y1="90" x2="200" y2="150"/>
+    <line x1="290" y1="90" x2="200" y2="150"/>
+    <line x1="110" y1="220" x2="200" y2="150"/>
+    <line x1="290" y1="220" x2="200" y2="150"/>
+    <line x1="110" y1="90" x2="110" y2="220"/>
+    <line x1="290" y1="90" x2="290" y2="220"/>
+  </g>
+  <circle cx="200" cy="150" r="16" fill="#22d3ee"/>
+  <circle cx="110" cy="90" r="12" fill="#a78bfa"/>
+  <circle cx="290" cy="90" r="12" fill="#a78bfa"/>
+  <circle cx="110" cy="220" r="12" fill="#fbbf24"/>
+  <circle cx="290" cy="220" r="12" fill="#3fb950"/>
+  <text x="200" y="288" font-family="-apple-system,Segoe UI,Roboto,sans-serif" font-size="29" font-weight="700" fill="#e6edf3" text-anchor="middle">Neural Atlas</text>
+  <text x="200" y="316" font-family="-apple-system,Segoe UI,Roboto,sans-serif" font-size="14" fill="#8b98a5" text-anchor="middle">An interactive map of how ML works</text>
+</svg>

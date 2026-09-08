@@ -266,7 +266,6 @@ export default function Home() {
       tags: ["TypeScript", "Python", "FastAPI", "vLLM", "SSE Streaming", "GPU Telemetry", "Redis"],
       imageUrl: "/images/inference-atlas/logo.svg",
       demoUrl: "https://inference-atlas-osamaansar.netlify.app",
-      repoUrl: "https://github.com/OsamaAnsar/inference-atlas",
       period: "Sep 2026",
       role: "Independent Project",
       images: ["/images/inference-atlas/logo.svg"],

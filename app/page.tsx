@@ -9,6 +9,7 @@ import { ContactForm } from "@/components/contact-form"
 import { ScrollLink } from "@/components/scroll-link"
 import { ThemeToggle } from "@/components/theme-toggle"
 import { DarkModeIndicator } from "@/components/dark-mode-indicator"
+import { AiHero } from "@/components/ai-hero"
 
 export default function Home() {
   // Resume — served locally from public/, no more stale Google Drive link
@@ -522,43 +523,8 @@ export default function Home() {
       </header>
 
       <main className="flex-1">
-        {/* Hero Section */}
-        <section className="py-24 md:py-32 bg-gradient-to-b from-primary/10 to-background">
-          <div className="container">
-            <div className="max-w-3xl mx-auto text-center">
-              <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-4">
-                Osama Ansar
-              </h1>
-              <p className="text-2xl md:text-3xl font-semibold text-primary mb-4">
-                AI / RAG Engineer
-              </p>
-              <p className="text-lg md:text-xl text-muted-foreground mb-4">
-                Senior Software Engineer, 7+ years. I build TypeScript retrieval-augmented generation systems,
-                agentic pipelines, and LLM evaluation infrastructure &mdash; each one shipped with real tests and a
-                live demo.
-              </p>
-              <p className="text-sm md:text-base text-muted-foreground mb-8">
-                Lahore, Pakistan &middot; Open to remote &middot; UTC+5, overlapping US mornings and the full EU workday
-              </p>
-              <div className="flex flex-col sm:flex-row justify-center gap-4">
-                <Button asChild size="lg">
-                  <ScrollLink href="#ai-projects">View AI Projects</ScrollLink>
-                </Button>
-                <Button variant="outline" size="lg" asChild>
-                  <Link href={resumeDownloadUrl} download="Osama-Ansar-Resume.pdf">
-                    Download Résumé
-                  </Link>
-                </Button>
-              </div>
-              <p className="text-sm text-muted-foreground mt-4">
-                or{" "}
-                <Link href={socialLinks.email} className="underline hover:text-primary">
-                  email me directly
-                </Link>
-              </p>
-            </div>
-          </div>
-        </section>
+        {/* Hero Section — AI 3D */}
+        <AiHero resumeDownloadUrl={resumeDownloadUrl} emailHref={socialLinks.email} />
 
         {/* About Section */}
         <section id="about" className="py-20">

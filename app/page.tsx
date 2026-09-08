@@ -211,6 +211,18 @@ export default function Home() {
   // AI / RAG engineering projects
   const aiProjects = [
     {
+      title: "Drape PK",
+      description:
+        "A multi-brand AI fitting room for Pakistani menswear: one catalogue of 75 real listings cached from five labels (Outfitters, Breakout, Engine, Cougar, Charcoal), with the AI running where it should. Visual search compares an uploaded garment photo against the catalogue with a local CLIP model; a language-model stylist takes a plain-English brief (occasion, style, budget) and returns a cross-brand three-piece look; virtual try-on previews a garment on an uploaded full-body photo; and a wardrobe plus a digital-twin style profile make recommendations avoid duplicate purchases. Privacy is a design constraint — search images are processed per-request and not stored, and wardrobe photos never reach the language model.",
+      tags: ["TypeScript", "CLIP", "Visual Search", "LLM Stylist", "Virtual Try-On", "On-device AI"],
+      imageUrl: "/images/drape-pk/logo.svg",
+      demoUrl: "https://fashionai-pakistan.netlify.app",
+      repoUrl: "https://github.com/OsamaAnsar/fashionai-pakistan",
+      period: "Sep 2026",
+      role: "Independent Project",
+      images: ["/images/drape-pk/logo.svg"],
+    },
+    {
       title: "MELAI Engineering Lab",
       description:
         "A workbench that makes AI systems measurable and reproducible instead of black boxes. Three labs shipped so far: run one prompt across several models and compare latency, tokens and cost side by side; chunk a document and compare BM25, vector and hybrid (Reciprocal Rank Fusion) retrieval with the per-method rank behind every hybrid hit; then score a retrieval config against a dataset — recall@k, precision@k, MRR, nDCG, hit-rate — streamed case by case. BM25, RRF, cosine search and the eval metrics are all from scratch. Provider SDKs (Anthropic, OpenAI, Ollama) sit behind one interface, pricing lives in a single calculator, and every experiment persists the fully-resolved request so it replays exactly. pnpm + Turborepo monorepo, Fastify + SSE, Drizzle + pgvector, runs with zero keys and zero Docker via built-in mocks.",
@@ -358,6 +370,7 @@ export default function Home() {
 
   // Flagship demos, surfaced at the top of the AI section with an embedded live preview
   const featuredTitles = new Set([
+    "Drape PK",
     "Retrieval Playground",
     "Refract",
     "DevSignal",
@@ -365,6 +378,16 @@ export default function Home() {
     "doc-chat-citations",
   ])
   const featuredProjects = [
+    {
+      title: "Drape PK",
+      tagline: "One AI fitting room. Every brand.",
+      description:
+        "A multi-brand fitting room for Pakistani menswear — 75 real listings from five labels. Local CLIP visual search from a garment photo, a language-model stylist that returns a cross-brand three-piece look from a plain-English brief, virtual try-on, and a wardrobe-aware digital-twin profile. Search images are never stored; wardrobe photos never reach the LLM.",
+      demoUrl: "https://fashionai-pakistan.netlify.app",
+      repoUrl: "https://github.com/OsamaAnsar/fashionai-pakistan",
+      tags: ["TypeScript", "CLIP", "Visual Search", "LLM Stylist", "Virtual Try-On", "On-device AI"],
+      logoUrl: "/images/drape-pk/logo.svg",
+    },
     {
       title: "Retrieval Playground",
       tagline: "Lexical vs neural vs fused, scored in-browser",

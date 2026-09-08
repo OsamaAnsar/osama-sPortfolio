@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
+  <rect width="400" height="400" fill="#0a0b0f"/>
+  <!-- hanger -->
+  <path d="M200 92 a10 10 0 1 1 8 16 c-6 3 -8 8 -8 14" fill="none" stroke="#8b98a5" stroke-width="4" stroke-linecap="round"/>
+  <path d="M200 122 L120 172 h160 Z" fill="none" stroke="#e7e9ee" stroke-width="4" stroke-linejoin="round"/>
+  <!-- three garment swatches = three brands -->
+  <rect x="118" y="182" width="44" height="56" rx="4" fill="#22d3ee"/>
+  <rect x="178" y="182" width="44" height="56" rx="4" fill="#a78bfa"/>
+  <rect x="238" y="182" width="44" height="56" rx="4" fill="#fbbf24"/>
+  <text x="200" y="286" font-family="-apple-system,Segoe UI,Roboto,sans-serif" font-size="30" font-weight="700" fill="#e6edf3" text-anchor="middle">Drape PK</text>
+  <text x="200" y="314" font-family="-apple-system,Segoe UI,Roboto,sans-serif" font-size="14" fill="#8b98a5" text-anchor="middle">One AI fitting room. Every brand.</text>
+</svg>

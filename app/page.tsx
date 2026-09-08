@@ -8,8 +8,8 @@ import { SkillBadge } from "@/components/skill-badge"
 import { ContactForm } from "@/components/contact-form"
 import { ScrollLink } from "@/components/scroll-link"
 import { ThemeToggle } from "@/components/theme-toggle"
-import { DarkModeIndicator } from "@/components/dark-mode-indicator"
 import { AiHero } from "@/components/ai-hero"
+import { AboutAgent } from "@/components/about-agent"
 
 export default function Home() {
   // Resume — served locally from public/, no more stale Google Drive link
@@ -716,7 +716,7 @@ export default function Home() {
           </div>
         </div>
       </footer>
-      <DarkModeIndicator />
+      <AboutAgent />
     </div>
   )
 }

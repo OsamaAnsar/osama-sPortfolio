@@ -260,6 +260,18 @@ export default function Home() {
       images: ["/images/neural-atlas/logo.svg"],
     },
     {
+      title: "Inference Atlas",
+      description:
+        "A self-hosted LLM inference playground that shows what usually stays hidden. The playground streams responses over SSE with sampling presets, stop/regenerate, and per-request timing — time-to-first-token, latency, tokens/sec and an estimated infrastructure cost, all labelled as gateway measurements, not GPU kernel timings. A GPU page polls utilization, VRAM and throughput; a CPU gateway reports those as unavailable rather than inventing them. The stack is a Next.js App Router frontend behind a same-origin proxy, a FastAPI gateway, Redis for fixed-window rate limiting, expiring request records and optional response caching, and a vLLM server that pulls Hugging Face weights at startup — with a documented path from a fully simulated demo (no Python, Redis or GPU) to a real GPU deployment. No hosted model API is used, and no cloud GPU has been provisioned yet, so demo readings are explicitly not benchmarks; the vLLM adapter is covered by a mocked upstream contract test.",
+      tags: ["TypeScript", "Python", "FastAPI", "vLLM", "SSE Streaming", "GPU Telemetry", "Redis"],
+      imageUrl: "/images/inference-atlas/logo.svg",
+      demoUrl: "https://inference-atlas-osamaansar.netlify.app",
+      repoUrl: "https://github.com/OsamaAnsar/inference-atlas",
+      period: "Sep 2026",
+      role: "Independent Project",
+      images: ["/images/inference-atlas/logo.svg"],
+    },
+    {
       title: "DevSignal",
       description:
         "Collects public signals from roughly ten developer sources — Hacker News, GitHub Trending, npm, arXiv, Lobsters, Stack Overflow, DEV, InfoQ, YouTube — and turns them into an editorial dashboard: topic momentum, trending languages, and cross-source technology clusters mapped on an interactive radar, with 90 days of daily observations so real trends can emerge. Ships on-device AI via Transformers.js: a quantized DistilBERT classifies story tone and powers \"Ask DevSignal\", a browser-only semantic search that answers natural-language questions with ranked, clickable evidence — no API key. Optional OpenAI enrichment runs server-side in the scheduled pipeline.",
@@ -332,16 +344,16 @@ export default function Home() {
       images: ["/images/agentic-rag/logo.svg"],
     },
     {
-      title: "hnsw-vector-index",
+      title: "HNSW Visualized",
       description:
-        "HNSW (Hierarchical Navigable Small World) — the approximate nearest-neighbor graph algorithm production vector databases use internally — implemented from scratch, no ANN library. Benchmarked against a brute-force exact baseline: recall@k climbs cleanly from 66% to 100% as efSearch increases, the textbook HNSW curve. 22 unit tests including recall correctness against brute-force ground truth on a clustered dataset.",
-      tags: ["TypeScript", "Algorithms", "Vector Search", "HNSW", "Vitest"],
-      imageUrl: "/images/hnsw-vector-index/logo.svg",
-      demoUrl: "https://osamaansar.github.io/hnsw-vector-index/",
-      repoUrl: "https://github.com/OsamaAnsar/hnsw-vector-index",
-      period: "Aug 2026",
+        "HNSW (Hierarchical Navigable Small World) — the approximate nearest-neighbor graph production vector databases use internally — built from scratch in ~240 lines of dependency-free JavaScript: exponential level assignment, greedy descent, per-layer beam search, the Algorithm-4 neighbor heuristic, bidirectional linking with symmetric pruning. Vectors are d-dimensional and the canvas is a fixed 2-D random projection; every parameter change re-runs a 40-query held-out evaluation and shows mean recall@k against a brute-force baseline, mean distance calls, and the speed-up. Widen efSearch and recall climbs toward 100% as the distance-call count climbs with it — the whole approximate-vs-exact trade-off on one slider. 10 tests (node --test), static page with no backend, deployed as a Hugging Face Space. The metrics are the same hand-written ones from MELAI.",
+      tags: ["JavaScript", "HNSW", "Vector Search", "Interactive Visualization", "Retrieval Metrics", "In-browser"],
+      imageUrl: "/images/hnsw-visualized/logo.svg",
+      demoUrl: "https://osama-ansar-hnsw-visualized.static.hf.space",
+      repoUrl: "https://github.com/OsamaAnsar/hnsw-visualized",
+      period: "Sep 2026",
       role: "Independent Project",
-      images: ["/images/hnsw-vector-index/logo.svg"],
+      images: ["/images/hnsw-visualized/logo.svg"],
     },
     {
       title: "ride-fare-advisor",

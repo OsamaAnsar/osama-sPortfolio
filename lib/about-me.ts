@@ -60,6 +60,16 @@ export const aboutChunks: AboutChunk[] = [
     text: "Neural Atlas is an interactive 'learn AI by exploring' site — around 35 lessons across seven tracks, each with a hands-on visual widget. I built the Retrieval & RAG track (embeddings, nearest-neighbour search, hybrid search and rank fusion, RAG, retrieval evaluation), an LLM decoding lesson, and an algorithm gallery covering binary search, merge sort, Dijkstra and PageRank. Live at neural-atlas-osamaansar.netlify.app.",
   },
   {
+    id: "hnsw-visualized",
+    title: "Project: HNSW Visualized",
+    text: "HNSW Visualized is a from-scratch build of the Hierarchical Navigable Small World graph — the approximate nearest-neighbour index most vector databases use internally — in about 240 lines of dependency-free JavaScript: exponential level assignment, greedy descent, per-layer beam search, the neighbour-selection heuristic, bidirectional linking with symmetric pruning. Vectors are d-dimensional and the canvas is a fixed 2-D random projection. Every parameter change re-runs a 40-query held-out evaluation and reports mean recall@k against a brute-force baseline, mean distance calls, and the speed-up; widening efSearch trades distance calls for recall in front of you. Ten tests run under node --test. It is a static page, no backend, deployed as a Hugging Face Space, and it reuses the hand-written retrieval metrics from MELAI.",
+  },
+  {
+    id: "inference-atlas",
+    title: "Project: Inference Atlas",
+    text: "Inference Atlas is a self-hosted LLM inference playground that surfaces what is usually hidden. The playground streams responses over SSE with sampling presets and stop/regenerate, and reports per-request time-to-first-token, latency, tokens per second and an estimated infrastructure cost — labelled as gateway measurements, not GPU kernel timings. A GPU page polls utilisation, VRAM and throughput, and a CPU-only gateway reports those as unavailable rather than inventing them. The stack is a Next.js App Router frontend behind a same-origin proxy, a FastAPI gateway, Redis for fixed-window rate limiting and expiring request records, and a vLLM server that downloads Hugging Face weights at startup, with a documented path from a fully simulated demo to a real GPU deployment. No hosted model API is used; no cloud GPU has been provisioned yet, so demo numbers are explicitly not benchmarks, and the vLLM adapter is covered by a mocked upstream contract test.",
+  },
+  {
     id: "other-projects",
     title: "Other projects",
     text: "Refract is a flagship RAG project. DevSignal surfaces signal from developer activity. generative-ui-chat renders real UI components from AI SDK tool calls, and doc-chat-citations does grounded document chat with inline citations — both are live on Vercel. This portfolio's own 'ask about me' agent is a client-side RAG pipeline: chunk, embed with MiniLM, retrieve, and answer from context, all in the browser.",
@@ -72,7 +82,7 @@ export const aboutChunks: AboutChunk[] = [
   {
     id: "skills",
     title: "Skills and stack",
-    text: "TypeScript and JavaScript first, then React, Next.js, Angular, Vue, Node and Express. For AI: RAG pipelines, vector databases and pgvector, embeddings, BM25 and hybrid search, LLM-as-judge evaluation, agentic tool use, the OpenAI and Anthropic SDKs, Transformers.js for in-browser models, Drizzle ORM, Fastify, Zod, Vitest and Playwright. I deliberately avoid leaning on the Vercel AI SDK for provider abstraction because per-provider token, cost and cache differences are exactly what I want to keep visible.",
+    text: "TypeScript and JavaScript first, then React, Next.js, Angular, Vue, Node and Express. For AI: RAG pipelines, vector databases and pgvector, embeddings, BM25 and hybrid search, ANN indexes like HNSW, LLM-as-judge evaluation, agentic tool use, the OpenAI and Anthropic SDKs, Transformers.js for in-browser models, self-hosted inference with vLLM and FastAPI, Drizzle ORM, Fastify, Zod, Vitest and Playwright. I deliberately avoid leaning on the Vercel AI SDK for provider abstraction because per-provider token, cost and cache differences are exactly what I want to keep visible.",
   },
   {
     id: "contact",

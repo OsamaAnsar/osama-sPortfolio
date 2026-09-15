@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
+  <rect width="400" height="400" fill="#0a0b0f"/>
+  <rect x="80" y="130" width="60" height="80" rx="6" fill="none" stroke="#8b98a5" stroke-width="3"/>
+  <line x1="92" y1="150" x2="128" y2="150" stroke="#8b98a5" stroke-width="2" opacity="0.7"/>
+  <line x1="92" y1="165" x2="128" y2="165" stroke="#8b98a5" stroke-width="2" opacity="0.7"/>
+  <line x1="92" y1="180" x2="115" y2="180" stroke="#8b98a5" stroke-width="2" opacity="0.7"/>
+  <g fill="none" stroke-width="6">
+    <rect x="165" y="150" width="46" height="30" rx="15" stroke="#22d3ee"/>
+    <rect x="197" y="150" width="46" height="30" rx="15" stroke="#a78bfa"/>
+    <rect x="229" y="150" width="46" height="30" rx="15" stroke="#22d3ee"/>
+  </g>
+  <path d="M289 165 L305 165 L305 145 L320 170 L305 195 L305 175 L289 175 Z" fill="#fbbf24"/>
+  <text x="200" y="278" font-family="-apple-system,Segoe UI,Roboto,sans-serif" font-size="24" font-weight="700" fill="#e6edf3" text-anchor="middle">LangChain RAG Playground</text>
+  <text x="200" y="306" font-family="-apple-system,Segoe UI,Roboto,sans-serif" font-size="14" fill="#8b98a5" text-anchor="middle">LCEL, entirely in the browser</text>
+</svg>

@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
+  <rect width="400" height="400" fill="#0a0b0f"/>
+  <rect x="110" y="100" width="180" height="120" rx="8" fill="none" stroke="#e7e9ee" stroke-width="3" opacity="0.7"/>
+  <g fill="none" stroke="#8b98a5" stroke-width="2" opacity="0.6">
+    <line x1="110" y1="118" x2="290" y2="118"/>
+    <line x1="110" y1="202" x2="290" y2="202"/>
+    <line x1="128" y1="100" x2="128" y2="118"/>
+    <line x1="146" y1="100" x2="146" y2="118"/>
+    <line x1="164" y1="100" x2="164" y2="118"/>
+    <line x1="128" y1="202" x2="128" y2="220"/>
+    <line x1="146" y1="202" x2="146" y2="220"/>
+    <line x1="164" y1="202" x2="164" y2="220"/>
+  </g>
+  <circle cx="200" cy="160" r="34" fill="none" stroke="#a78bfa" stroke-width="2.5" opacity="0.8"/>
+  <path d="M192 145 L192 175 L218 160 Z" fill="#22d3ee"/>
+  <circle cx="245" cy="130" r="3" fill="#fbbf24"/>
+  <circle cx="255" cy="145" r="3" fill="#fbbf24" opacity="0.6"/>
+  <text x="200" y="278" font-family="-apple-system,Segoe UI,Roboto,sans-serif" font-size="30" font-weight="700" fill="#e6edf3" text-anchor="middle">Motion Atlas</text>
+  <text x="200" y="306" font-family="-apple-system,Segoe UI,Roboto,sans-serif" font-size="14" fill="#8b98a5" text-anchor="middle">Self-hosted AI video, on your own GPU</text>
+</svg>

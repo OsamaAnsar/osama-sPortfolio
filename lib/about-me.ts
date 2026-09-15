@@ -37,7 +37,7 @@ export const aboutChunks: AboutChunk[] = [
   {
     id: "melai-milestones",
     title: "MELAI Engineering Lab — progress",
-    text: "MELAI ships in milestones. Milestone 1, the Model Comparison Lab, runs one prompt across several models and shows answers, latency, tokens and cost side by side. Milestone 2, the RAG Lab, does chunking, embeddings, and BM25 / vector / hybrid retrieval with the per-method rank and score behind every hybrid hit. Milestone 3, the Evaluation Lab, scores a retrieval config against a dataset with recall@k, precision@k, MRR, nDCG and hit-rate, streamed case by case. Agents, local-AI observability, and a CLI + CI regression gate come next.",
+    text: "MELAI shipped in six milestones, all complete. Model Comparison Lab runs one prompt across several models and shows answers, latency, tokens and cost side by side. RAG Lab does chunking, embeddings, and BM25 / vector / hybrid retrieval with the per-method rank and score behind every hybrid hit. Evaluation Lab scores a retrieval or generation config against a dataset with recall@k, precision@k, MRR, nDCG, hit-rate and LLM-as-judge, streamed case by case. Agents Lab gives an agent a system prompt and a toolset and streams its tool-calling loop live. Local-AI Observability merges every model call across every lab into one filterable trace feed, plus live Ollama VRAM/runtime telemetry. And a CLI + CI regression gate seeds a database, runs a generation eval, and fails the build on a regression — the same command runs locally or in CI. It's deployed live: web on Netlify, the API on Render, Postgres on Neon.",
   },
   {
     id: "melai-scratch",
@@ -63,6 +63,21 @@ export const aboutChunks: AboutChunk[] = [
     id: "hnsw-visualized",
     title: "Project: HNSW Visualized",
     text: "HNSW Visualized is a from-scratch build of the Hierarchical Navigable Small World graph — the approximate nearest-neighbour index most vector databases use internally — in about 240 lines of dependency-free JavaScript: exponential level assignment, greedy descent, per-layer beam search, the neighbour-selection heuristic, bidirectional linking with symmetric pruning. Vectors are d-dimensional and the canvas is a fixed 2-D random projection. Every parameter change re-runs a 40-query held-out evaluation and reports mean recall@k against a brute-force baseline, mean distance calls, and the speed-up; widening efSearch trades distance calls for recall in front of you. Ten tests run under node --test. It is a static page, no backend, deployed as a Hugging Face Space, and it reuses the hand-written retrieval metrics from MELAI.",
+  },
+  {
+    id: "gpu-visualized",
+    title: "Project: GPU Visualized",
+    text: "GPU Visualized is an interactive lecture aid walking through how a GPU actually executes a neural network — die, SM, warp, memory hierarchy — up to the two numbers that decide training speed: arithmetic intensity and where the data lives. Switch between A100, H100 and RTX 4090 and every diagram recomputes: an occupancy calculator, a coalescing demo, a tiling view, and a roofline plot with a transformer layer's kernels on it. Every spec is sourced from a vendor datasheet; a 30-test suite checks the spec table against itself, reproducing published TFLOPS to within 0.15%. Vanilla JS, no framework, no build step, deployed as a Hugging Face Space and on GitHub.",
+  },
+  {
+    id: "langchain-rag-playground",
+    title: "Project: LangChain RAG Playground",
+    text: "LangChain RAG Playground is a RAG pipeline built on LangChain.js and LCEL, running almost entirely in the browser. Paste a document, watch it split and embed, ask a question, and see the retrieved context, the assembled prompt, and a streamed grounded answer. Embeddings run locally via Transformers.js — no server, no key; generation uses a user-supplied OpenAI key kept in localStorage only. The chain is about 60 lines and is unit-tested with LangChain's FakeListChatModel, so the logic is verified with no network at all.",
+  },
+  {
+    id: "motion-atlas",
+    title: "Project: Motion Atlas",
+    text: "Motion Atlas is a self-hosted take on Runway or Kling: prompt or image in, MP4 out, running a Wan 2.2 diffusion model via ComfyUI on my own RTX 3070 rather than a hosted API. It's built around technical visibility — live inference stages over a WebSocket event channel, GPU telemetry sampled every two seconds, a real FIFO job queue, and full reproducible metadata per render. The full path from browser through Next.js and FastAPI to ComfyUI and back has run end to end on real hardware. A DEMO_MODE runs the entire stack with no GPU at all, via one provider interface the frontend never has to know is swapped.",
   },
   {
     id: "inference-atlas",

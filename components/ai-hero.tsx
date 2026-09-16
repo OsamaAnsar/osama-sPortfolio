@@ -192,12 +192,26 @@ function Scene() {
 }
 
 const HERO_COPY = {
-  eyebrow: "Lahore, Pakistan · Open to remote · UTC+5",
+  status: "Open to opportunities — remote or Saudi Arabia relocation",
+  eyebrow: "Lahore, Pakistan · UTC+5 · Available Oct 2026",
   body:
     "Senior Software Engineer, 7+ years. I build TypeScript retrieval-augmented generation systems, agentic pipelines, and LLM evaluation infrastructure — each one shipped with real tests and a live demo.",
 }
 
-export function AiHero({ resumeDownloadUrl, emailHref }: { resumeDownloadUrl: string; emailHref: string }) {
+export interface HeroStat {
+  value: string
+  label: string
+}
+
+export function AiHero({
+  resumeDownloadUrl,
+  emailHref,
+  stats,
+}: {
+  resumeDownloadUrl: string
+  emailHref: string
+  stats: HeroStat[]
+}) {
   const [mounted, setMounted] = useState(false)
   const [reduced, setReduced] = useState(false)
 
@@ -238,10 +252,16 @@ export function AiHero({ resumeDownloadUrl, emailHref }: { resumeDownloadUrl: st
 
       <div className="container relative">
         <div className="mx-auto max-w-3xl text-center">
-          <p className="mb-5 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-medium text-cyan-200/90 backdrop-blur">
-            <span className="h-1.5 w-1.5 rounded-full bg-cyan-400 shadow-[0_0_8px_2px_rgba(34,211,238,0.7)]" />
-            {HERO_COPY.eyebrow}
-          </p>
+          <div className="mb-5 flex flex-col items-center gap-2">
+            <p className="inline-flex items-center gap-2 rounded-full border border-emerald-400/30 bg-emerald-400/10 px-3 py-1 text-xs font-medium text-emerald-200/90 backdrop-blur">
+              <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-emerald-400 shadow-[0_0_8px_2px_rgba(52,211,153,0.7)]" />
+              {HERO_COPY.status}
+            </p>
+            <p className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-medium text-cyan-200/90 backdrop-blur">
+              <span className="h-1.5 w-1.5 rounded-full bg-cyan-400 shadow-[0_0_8px_2px_rgba(34,211,238,0.7)]" />
+              {HERO_COPY.eyebrow}
+            </p>
+          </div>
           <h1 className="text-4xl font-bold tracking-tight text-white drop-shadow-[0_2px_20px_rgba(129,140,248,0.35)] md:text-6xl">
             Osama Ansar
           </h1>
@@ -276,6 +296,18 @@ export function AiHero({ resumeDownloadUrl, emailHref }: { resumeDownloadUrl: st
               email me directly
             </Link>
           </p>
+
+          <div className="mx-auto mt-10 grid max-w-2xl grid-cols-2 gap-3 sm:grid-cols-4">
+            {stats.map((stat) => (
+              <div
+                key={stat.label}
+                className="rounded-xl border border-white/10 bg-white/5 px-3 py-4 text-center backdrop-blur"
+              >
+                <div className="text-2xl font-bold text-white md:text-3xl">{stat.value}</div>
+                <div className="mt-1 text-xs leading-snug text-white/60">{stat.label}</div>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
 

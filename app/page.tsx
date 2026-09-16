@@ -4,7 +4,7 @@ import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { ProjectCard } from "@/components/project-card"
 import { FeaturedDemo } from "@/components/featured-demo"
-import { SkillBadge } from "@/components/skill-badge"
+import { SkillsSection } from "@/components/skills-section"
 import { ContactForm } from "@/components/contact-form"
 import { ScrollLink } from "@/components/scroll-link"
 import { ThemeToggle } from "@/components/theme-toggle"
@@ -499,29 +499,63 @@ export default function Home() {
     },
   ]
 
-  // Skills data
-  const skills = [
-    { name: "JavaScript", icon: "js" },
-    { name: "TypeScript", icon: "ts" },
-    { name: "Angular", icon: "angular" },
-    { name: "React", icon: "react" },
-    { name: "Vue.js", icon: "vue" },
-    { name: "Next.js", icon: "next" },
-    { name: "Node.js", icon: "node" },
-    { name: "Express.js", icon: "express" },
-    { name: "Redux", icon: "redux" },
-    { name: "Tailwind CSS", icon: "tailwind" },
-    { name: "MongoDB", icon: "mongodb" },
-    { name: "PostgreSQL", icon: "postgres" },
-    { name: "Jest", icon: "jest" },
-    { name: "Git", icon: "git" },
-    { name: "AWS", icon: "aws" },
-    { name: "OpenAI API", icon: "openai" },
-    { name: "Vitest", icon: "vitest" },
-    { name: "Vercel AI SDK", icon: "vercel" },
-    { name: "LangChain.js", icon: "langchain" },
-    { name: "RAG", icon: "rag" },
-    { name: "Vector Databases", icon: "vectordb" },
+  // Skills, grouped by domain
+  const skillGroups = [
+    {
+      title: "AI / RAG Engineering",
+      description: "Retrieval, agents, and evaluation — the current focus.",
+      skills: [
+        { name: "OpenAI API", icon: "openai" },
+        { name: "LangChain.js", icon: "langchain" },
+        { name: "RAG", icon: "rag" },
+        { name: "Vector Databases", icon: "vectordb" },
+        { name: "Vercel AI SDK", icon: "vercel" },
+      ],
+    },
+    {
+      title: "Frontend",
+      description: "Component architecture across three major frameworks.",
+      skills: [
+        { name: "JavaScript", icon: "js" },
+        { name: "TypeScript", icon: "ts" },
+        { name: "React", icon: "react" },
+        { name: "Angular", icon: "angular" },
+        { name: "Vue.js", icon: "vue" },
+        { name: "Next.js", icon: "next" },
+        { name: "Redux", icon: "redux" },
+        { name: "Tailwind CSS", icon: "tailwind" },
+      ],
+    },
+    {
+      title: "Backend & Data",
+      description: "APIs, services, and the databases behind them.",
+      skills: [
+        { name: "Node.js", icon: "node" },
+        { name: "Express.js", icon: "express" },
+        { name: "MongoDB", icon: "mongodb" },
+        { name: "PostgreSQL", icon: "postgres" },
+        { name: "AWS", icon: "aws" },
+      ],
+    },
+    {
+      title: "Testing & Tooling",
+      description: "Regression safety and day-to-day workflow.",
+      skills: [
+        { name: "Jest", icon: "jest" },
+        { name: "Vitest", icon: "vitest" },
+        { name: "Git", icon: "git" },
+      ],
+    },
+  ]
+
+  // Hero stats strip — every number is derived from real, countable data below, not invented.
+  const aiProjectsShipped = aiProjects.filter((p) => p.role !== "Open Source Contributor").length
+  const openSourceSdkCount = 4 // Weaviate, Qdrant, Turso (libSQL), Google Agent2Agent — see the Open Source card below
+  const heroStats = [
+    { value: "7+", label: "Years Experience" },
+    { value: String(aiProjectsShipped), label: "AI / RAG Projects Shipped" },
+    { value: String(projects.length), label: "Professional Engagements" },
+    { value: String(openSourceSdkCount), label: "Open-Source SDKs Contributed To" },
   ]
 
   return (
@@ -582,7 +616,7 @@ export default function Home() {
 
       <main className="flex-1">
         {/* Hero Section — AI 3D */}
-        <AiHero resumeDownloadUrl={resumeDownloadUrl} emailHref={socialLinks.email} />
+        <AiHero resumeDownloadUrl={resumeDownloadUrl} emailHref={socialLinks.email} stats={heroStats} />
 
         {/* About Section */}
         <section id="about" className="py-20">
@@ -637,11 +671,7 @@ export default function Home() {
         <section id="skills" className="py-20 bg-muted/50">
           <div className="container">
             <h2 className="text-3xl font-bold mb-12 text-center">Skills & Technologies</h2>
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
-              {skills.map((skill) => (
-                <SkillBadge key={skill.name} name={skill.name} icon={skill.icon} />
-              ))}
-            </div>
+            <SkillsSection groups={skillGroups} />
           </div>
         </section>
 

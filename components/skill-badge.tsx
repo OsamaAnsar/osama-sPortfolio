@@ -18,8 +18,10 @@ import {
   SiDocker,
   SiVitest,
   SiVercel,
+  SiLangchain,
 } from "react-icons/si"
 import { TbBrandAws, TbBrandOpenai } from "react-icons/tb"
+import { Network, Database } from "lucide-react"
 
 interface SkillBadgeProps {
   name: string
@@ -69,6 +71,12 @@ export function SkillBadge({ name, icon }: SkillBadgeProps) {
         return <SiVitest className="h-8 w-8 text-lime-500" />
       case "vercel":
         return <SiVercel className="h-8 w-8" />
+      case "langchain":
+        return <SiLangchain className="h-8 w-8 text-emerald-500" />
+      case "rag":
+        return <Network className="h-8 w-8 text-indigo-400" />
+      case "vectordb":
+        return <Database className="h-8 w-8 text-sky-400" />
       default:
         return null
     }

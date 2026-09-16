@@ -192,7 +192,7 @@ function Scene() {
 }
 
 const HERO_COPY = {
-  status: "Open to opportunities — remote or Saudi Arabia relocation",
+  status: "Open to opportunities — remote",
   eyebrow: "Lahore, Pakistan · UTC+5 · Available Oct 2026",
   body:
     "Senior Software Engineer, 7+ years. I build TypeScript retrieval-augmented generation systems, agentic pipelines, and LLM evaluation infrastructure — each one shipped with real tests and a live demo.",
